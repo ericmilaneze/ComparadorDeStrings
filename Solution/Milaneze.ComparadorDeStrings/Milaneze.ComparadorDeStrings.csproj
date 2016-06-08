@@ -54,13 +54,13 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Milaneze.ComparadorDeStrings.Abstract\Milaneze.ComparadorDeStrings.Comum.csproj">
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Milaneze.ComparadorDeStrings.Comum\Milaneze.ComparadorDeStrings.Comum.csproj">
       <Project>{ed466270-8529-40da-a2e2-2d2abadb7292}</Project>
       <Name>Milaneze.ComparadorDeStrings.Comum</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

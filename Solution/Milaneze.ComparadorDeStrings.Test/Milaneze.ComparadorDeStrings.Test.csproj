@@ -70,7 +70,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Milaneze.ComparadorDeStrings.Abstract\Milaneze.ComparadorDeStrings.Comum.csproj">
+    <ProjectReference Include="..\Milaneze.ComparadorDeStrings.Comum\Milaneze.ComparadorDeStrings.Comum.csproj">
       <Project>{ed466270-8529-40da-a2e2-2d2abadb7292}</Project>
       <Name>Milaneze.ComparadorDeStrings.Comum</Name>
     </ProjectReference>

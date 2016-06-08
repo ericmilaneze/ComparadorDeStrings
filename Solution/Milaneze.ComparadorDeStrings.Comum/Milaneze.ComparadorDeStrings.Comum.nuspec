@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>$id$</id>
+    <version>$version$</version>
+    <title>$title$</title>
+    <authors>Eric Milaneze</authors>
+    <owners>$author$</owners>
+    <licenseUrl>https://raw.githubusercontent.com/ericmilaneze/Milaneze.ComparadorDeStrings/master/License.md</licenseUrl>
+    <projectUrl>https://github.com/ericmilaneze/Milaneze.ComparadorDeStrings/</projectUrl>
+    <iconUrl>https://1.gravatar.com/avatar/74c7099049a503f78978eabd39aea180</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>$description$</description>
+    <tags>Milaneze ComparadorDeStrings</tags>
+  </metadata>
+</package>

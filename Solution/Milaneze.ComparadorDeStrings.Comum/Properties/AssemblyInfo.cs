@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Milaneze.ComparadorDeStrings.Abstract")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("Milaneze.ComparadorDeStrings.Comum")]
+[assembly: AssemblyDescription("Classes abstratas e de suporte para a biblioteca Milaneze.ComparadorDeStrings.")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Milaneze.ComparadorDeStrings.Abstract")]
+[assembly: AssemblyCompany("Milaneze")]
+[assembly: AssemblyProduct("Milaneze.ComparadorDeStrings.Comum")]
 [assembly: AssemblyCopyright("")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
