@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="NameAndType">
+  <Class Name="Milaneze.ComparadorDeStrings.Enderecos.ComparadorEndereco" Collapsed="true">
+    <Position X="7" Y="4.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAACFCAgABEAgAAAACACAAEAAAAAAAAAEACAEAA=</HashCode>
+      <FileName>Enderecos\ComparadorEndereco.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Milaneze.ComparadorDeStrings.Enderecos.MatchEndereco" Collapsed="true">
+    <Position X="5" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEAAAAIAAQAAAACAAAAAAAAAAAAAAAABAAg=</HashCode>
+      <FileName>Enderecos\MatchEndereco.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Milaneze.ComparadorDeStrings.SimilarityTool">
+    <Position X="0.5" Y="0.5" Width="2" />
+    <Members>
+      <Method Name="LetterPairs" Hidden="true" />
+      <Method Name="WordLetterPairs" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgAAAAAEAAAAAAAAAAAAAAABAAAAAAA=</HashCode>
+      <FileName>SimilarityTool.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Milaneze.ComparadorDeStrings.Comum.Match">
+    <Position X="2.75" Y="0.5" Width="2" />
+    <Members>
+      <Method Name="Equals" Hidden="true" />
+      <Method Name="GetHashCode" Hidden="true" />
+      <Method Name="Match" Hidden="true" />
+    </Members>
+    <TypeIdentifier />
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Milaneze.ComparadorDeStrings.Comum.Enderecos.Endereco">
+    <Position X="2.75" Y="2.5" Width="1.75" />
+    <Members>
+      <Method Name="Endereco" Hidden="true" />
+    </Members>
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Milaneze.ComparadorDeStrings.Comum.Enderecos.SubstituicaoLogradouro">
+    <Position X="2.75" Y="4.5" Width="2" />
+    <Members>
+      <Method Name="SubstituicaoLogradouro" Hidden="true" />
+    </Members>
+    <TypeIdentifier />
+  </Class>
+  <Interface Name="Milaneze.ComparadorDeStrings.Comum.Enderecos.IComparadorEndereco">
+    <Position X="7" Y="0.5" Width="4" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="Milaneze.ComparadorDeStrings.Comum.Enderecos.IMatchEndereco">
+    <Position X="5" Y="0.5" Width="1.75" />
+    <TypeIdentifier />
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
