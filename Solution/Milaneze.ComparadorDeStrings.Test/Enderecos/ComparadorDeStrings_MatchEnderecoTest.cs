@@ -14,10 +14,10 @@ namespace Milaneze.ComparadorDeStrings.Test.Enderecos
         {
             IMatchEndereco matchEndereco = new MatchEndereco()
             {
-                Cidade = new Match() { Igual = true },
-                Estado = new Match() { Igual = true },
-                Logradouro = new Match() { Igual = true },
-                Numero = new Match() { Igual = true }
+                Cidade = new Match(nome1: null, nome2: null, porcentagem: 0, igual: true),
+                Estado = new Match(nome1: null, nome2: null, porcentagem: 0, igual: true),
+                Logradouro = new Match(nome1: null, nome2: null, porcentagem: 0, igual: true),
+                Numero = new Match(nome1: null, nome2: null, porcentagem: 0, igual: true)
             };
 
             Assert.IsTrue(matchEndereco.MatchTotal);
@@ -28,10 +28,10 @@ namespace Milaneze.ComparadorDeStrings.Test.Enderecos
         {
             IMatchEndereco matchEndereco = new MatchEndereco()
             {
-                Cidade = new Match() { Igual = true },
-                Estado = new Match() { Igual = true },
-                Logradouro = new Match() { Igual = true },
-                Numero = new Match() { Igual = false }
+                Cidade = new Match(nome1: null, nome2: null, porcentagem: 0, igual: true),
+                Estado = new Match(nome1: null, nome2: null, porcentagem: 0, igual: true),
+                Logradouro = new Match(nome1: null, nome2: null, porcentagem: 0, igual: true),
+                Numero = new Match(nome1: null, nome2: null, porcentagem: 0, igual: false)
             };
 
             Assert.IsFalse(matchEndereco.MatchTotal);
@@ -42,10 +42,10 @@ namespace Milaneze.ComparadorDeStrings.Test.Enderecos
         {
             IMatchEndereco matchEndereco = new MatchEndereco()
             {
-                Cidade = new Match() { Igual = true },
-                Estado = new Match() { Igual = true },
-                Logradouro = new Match() { Igual = true },
-                Numero = new Match() { Igual = true }
+                Cidade = new Match(nome1: null, nome2: null, porcentagem: 0, igual: true),
+                Estado = new Match(nome1: null, nome2: null, porcentagem: 0, igual: true),
+                Logradouro = new Match(nome1: null, nome2: null, porcentagem: 0, igual: true),
+                Numero = new Match(nome1: null, nome2: null, porcentagem: 0, igual: true)
             };
 
             Assert.IsTrue(matchEndereco.MatchParcial);
@@ -56,10 +56,10 @@ namespace Milaneze.ComparadorDeStrings.Test.Enderecos
         {
             IMatchEndereco matchEndereco = new MatchEndereco()
             {
-                Cidade = new Match() { Igual = true },
-                Estado = new Match() { Igual = true },
-                Logradouro = new Match() { Igual = true },
-                Numero = new Match() { Igual = false }
+                Cidade = new Match(nome1: null, nome2: null, porcentagem: 0, igual: true),
+                Estado = new Match(nome1: null, nome2: null, porcentagem: 0, igual: true),
+                Logradouro = new Match(nome1: null, nome2: null, porcentagem: 0, igual: true),
+                Numero = new Match(nome1: null, nome2: null, porcentagem: 0, igual: false)
             };
 
             Assert.IsTrue(matchEndereco.MatchParcial);
@@ -70,10 +70,10 @@ namespace Milaneze.ComparadorDeStrings.Test.Enderecos
         {
             IMatchEndereco matchEndereco = new MatchEndereco()
             {
-                Cidade = new Match() { Igual = true },
-                Estado = new Match() { Igual = false },
-                Logradouro = new Match() { Igual = true },
-                Numero = new Match() { Igual = false }
+                Cidade = new Match(nome1: null, nome2: null, porcentagem: 0, igual: true),
+                Estado = new Match(nome1: null, nome2: null, porcentagem: 0, igual: false),
+                Logradouro = new Match(nome1: null, nome2: null, porcentagem: 0, igual: true),
+                Numero = new Match(nome1: null, nome2: null, porcentagem: 0, igual: false)
             };
 
             Assert.IsFalse(matchEndereco.MatchParcial);

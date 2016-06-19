@@ -7,9 +7,17 @@ namespace Milaneze.ComparadorDeStrings.Comum.Enderecos
 {
     public class Endereco
     {
-        public string Logradouro { get; set; }
-        public string Numero { get; set; }
-        public string Cidade { get; set; }
-        public string Estado { get; set; }
+        public string Logradouro { get; private set; }
+        public string Numero { get; private set; }
+        public string Cidade { get; private set; }
+        public string Estado { get; private set; }
+
+        public Endereco(string logradouro, string numero, string cidade, string estado)
+        {
+            Logradouro = logradouro;
+            Numero = numero;
+            Cidade = cidade;
+            Estado = estado;
+        }
     }
 }

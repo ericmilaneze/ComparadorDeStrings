@@ -18,26 +18,21 @@ namespace Milaneze.ComparadorDeStrings.Test.Enderecos
             comparadorEndereco.PorcentagemMinimaMatchCidade = 80;
             comparadorEndereco.SubstituicoesLogradouro = new List<SubstituicaoLogradouro>()
             {
-                new SubstituicaoLogradouro()
-                {
-                    De = "avenida",
-                    Para = "av"
-                },
-                new SubstituicaoLogradouro()
-                {
-                    De = "praça",
-                    Para = "pc"
-                },
-                new SubstituicaoLogradouro()
-                {
-                    De = "rua",
-                    Para = "r"
-                },
-                new SubstituicaoLogradouro()
-                {
-                    De = "engenheiro",
-                    Para = "eng"
-                }
+                new SubstituicaoLogradouro(
+                    de: "avenida",
+                    para: "av"),
+
+                new SubstituicaoLogradouro(
+                    de: "praça",
+                    para: "pc"),
+
+                new SubstituicaoLogradouro(
+                    de: "rua",
+                    para: "r"),
+                
+                new SubstituicaoLogradouro(
+                    de: "engenheiro",
+                    para: "eng")
             };
             return comparadorEndereco;
         }
@@ -121,8 +116,8 @@ namespace Milaneze.ComparadorDeStrings.Test.Enderecos
         {
             IComparadorEndereco comparadorEndereco = getComparadorEndereco();
 
-            string logradouro1 = "Praça Francisco da Gama";
-            string logradouro2 = "Pc Francisco da Gama";
+            string logradouro1 = "Praça Amarildo Pereira";
+            string logradouro2 = "Pc Amarildo Pereira";
 
             double resultado = comparadorEndereco.CompararLogradouro(logradouro1, logradouro2);
             double esperado = 100;
@@ -205,8 +200,8 @@ namespace Milaneze.ComparadorDeStrings.Test.Enderecos
         {
             IComparadorEndereco comparadorEndereco = getComparadorEndereco();
 
-            string logradouro1 = "Praça Francisco da Gama";
-            string logradouro2 = "Pc Francisco da Gata";
+            string logradouro1 = "Praça Amarildo Pereira";
+            string logradouro2 = "Pc Amarildo Perera";
 
             double resultado = comparadorEndereco.CompararLogradouro(logradouro1, logradouro2);
             double minimoEsperado = 70;
@@ -219,8 +214,8 @@ namespace Milaneze.ComparadorDeStrings.Test.Enderecos
         {
             IComparadorEndereco comparadorEndereco = getComparadorEndereco();
 
-            string logradouro1 = "Praça Francisco da Gama";
-            string logradouro2 = "Pc Franco da Gata";
+            string logradouro1 = "Praça Amarildo Pereira";
+            string logradouro2 = "Pc Amaro Perera";
 
             double resultado = comparadorEndereco.CompararLogradouro(logradouro1, logradouro2);
             double minimoEsperado = 70;
@@ -247,8 +242,8 @@ namespace Milaneze.ComparadorDeStrings.Test.Enderecos
         {
             IComparadorEndereco comparadorEndereco = getComparadorEndereco();
 
-            string logradouro1 = "Praça Francisco da Gama";
-            string logradouro2 = "Pc Franco da Gata";
+            string logradouro1 = "Praça Amarildo Pereira";
+            string logradouro2 = "Pc Amaro Perera";
 
             bool resultado = comparadorEndereco.IsLogradouroIgual(logradouro1, logradouro2);
             bool esperado = false;
@@ -261,8 +256,8 @@ namespace Milaneze.ComparadorDeStrings.Test.Enderecos
         {
             IComparadorEndereco comparadorEndereco = getComparadorEndereco();
 
-            string logradouro1 = "Praça Francisco da Gama";
-            string logradouro2 = "Pc Franco da Gama";
+            string logradouro1 = "Praça Amarildo Pereira";
+            string logradouro2 = "Pc Amaro Pereira";
 
             bool resultado = comparadorEndereco.IsLogradouroIgual(logradouro1, logradouro2);
             bool esperado = true;
@@ -289,8 +284,8 @@ namespace Milaneze.ComparadorDeStrings.Test.Enderecos
         {
             IComparadorEndereco comparadorEndereco = getComparadorEndereco();
 
-            string logradouro1 = "Praça Francisco da Gama";
-            string logradouro2 = "Pc Francisco da Gama";
+            string logradouro1 = "Praça Amarildo Pereira";
+            string logradouro2 = "Pc Amarildo Pereira";
 
             bool resultado = comparadorEndereco.IsLogradouroIgual(logradouro1, logradouro2);
             bool esperado = true;
@@ -303,8 +298,8 @@ namespace Milaneze.ComparadorDeStrings.Test.Enderecos
         {
             IComparadorEndereco comparadorEndereco = getComparadorEndereco();
 
-            string logradouro1 = "Praça Francisco da Gama";
-            string logradouro2 = "Pc Francisco da Gama";
+            string logradouro1 = "Praça Amarildo Pereira";
+            string logradouro2 = "Pc Amarildo Pereira";
 
             bool resultado = comparadorEndereco.IsLogradouroIgual(logradouro1, logradouro2, 90);
             bool esperado = true;
@@ -317,8 +312,8 @@ namespace Milaneze.ComparadorDeStrings.Test.Enderecos
         {
             IComparadorEndereco comparadorEndereco = getComparadorEndereco();
 
-            string logradouro1 = "Praça Francisco da Gama";
-            string logradouro2 = "Pc Franco da Gatona";
+            string logradouro1 = "Praça Amarildo Pereira";
+            string logradouro2 = "Pc Amarelinho Pereirinho";
 
             bool resultado = comparadorEndereco.IsLogradouroIgual(logradouro1, logradouro2, 65);
             bool esperado = false;
@@ -625,13 +620,11 @@ namespace Milaneze.ComparadorDeStrings.Test.Enderecos
         {
             IComparadorEndereco comparadorEndereco = getComparadorEndereco();
 
-            Match matchEsperado = new Match()
-            {
-                Nome1 = "Praça Francisco da Gama",
-                Nome2 = "pc francisco da gama",
-                Igual = true,
-                Porcentagem = 100
-            };
+            Match matchEsperado = new Match(
+                nome1: "Praça Amarildo Pereira",
+                nome2: "pc Amarildo Pereira",
+                igual: true,
+                porcentagem: 100);
 
             Match resultado = comparadorEndereco.CompararLogradouroMatch(matchEsperado.Nome1, matchEsperado.Nome2);
 
@@ -643,13 +636,11 @@ namespace Milaneze.ComparadorDeStrings.Test.Enderecos
         {
             IComparadorEndereco comparadorEndereco = getComparadorEndereco();
 
-            Match matchEsperado = new Match()
-            {
-                Nome1 = "Praça Francisco da Gama",
-                Nome2 = "pc chico da garça",
-                Igual = false,
-                Porcentagem = 70
-            };
+            Match matchEsperado = new Match(
+                nome1: "Praça Amarildo Pereira",
+                nome2: "pc chico da garça",
+                igual: false,
+                porcentagem: 70);
 
             Match resultado = comparadorEndereco.CompararLogradouroMatch(matchEsperado.Nome1, matchEsperado.Nome2);
 
@@ -665,13 +656,11 @@ namespace Milaneze.ComparadorDeStrings.Test.Enderecos
         {
             IComparadorEndereco comparadorEndereco = getComparadorEndereco();
 
-            Match matchEsperado = new Match()
-            {
-                Nome1 = "25",
-                Nome2 = "25",
-                Igual = true,
-                Porcentagem = 100
-            };
+            Match matchEsperado = new Match(
+                nome1: "25",
+                nome2: "25",
+                igual: true,
+                porcentagem: 100);
 
             Match resultado = comparadorEndereco.CompararNumeroMatch(matchEsperado.Nome1, matchEsperado.Nome2);
 
@@ -683,13 +672,11 @@ namespace Milaneze.ComparadorDeStrings.Test.Enderecos
         {
             IComparadorEndereco comparadorEndereco = getComparadorEndereco();
 
-            Match matchEsperado = new Match()
-            {
-                Nome1 = "28",
-                Nome2 = "25",
-                Igual = false,
-                Porcentagem = 0
-            };
+            Match matchEsperado = new Match(
+                nome1: "28",
+                nome2: "25",
+                igual: false,
+                porcentagem: 0);
 
             Match resultado = comparadorEndereco.CompararNumeroMatch(matchEsperado.Nome1, matchEsperado.Nome2);
 
@@ -701,13 +688,11 @@ namespace Milaneze.ComparadorDeStrings.Test.Enderecos
         {
             IComparadorEndereco comparadorEndereco = getComparadorEndereco();
 
-            Match matchEsperado = new Match()
-            {
-                Nome1 = "Belo Horizonte",
-                Nome2 = "belo horizonte",
-                Igual = true,
-                Porcentagem = 100
-            };
+            Match matchEsperado = new Match(
+                nome1: "Belo Horizonte",
+                nome2: "belo horizonte",
+                igual: true,
+                porcentagem: 100);
 
             Match resultado = comparadorEndereco.CompararCidadeMatch(matchEsperado.Nome1, matchEsperado.Nome2);
 
@@ -719,13 +704,11 @@ namespace Milaneze.ComparadorDeStrings.Test.Enderecos
         {
             IComparadorEndereco comparadorEndereco = getComparadorEndereco();
 
-            Match matchEsperado = new Match()
-            {
-                Nome1 = "Belo Horizonte",
-                Nome2 = "Rio de Janeiro",
-                Igual = false,
-                Porcentagem = 70
-            };
+            Match matchEsperado = new Match(
+                nome1: "Belo Horizonte",
+                nome2: "Rio de Janeiro",
+                igual: false,
+                porcentagem: 70);
 
             Match resultado = comparadorEndereco.CompararCidadeMatch(matchEsperado.Nome1, matchEsperado.Nome2);
 
@@ -741,13 +724,11 @@ namespace Milaneze.ComparadorDeStrings.Test.Enderecos
         {
             IComparadorEndereco comparadorEndereco = getComparadorEndereco();
 
-            Match matchEsperado = new Match()
-            {
-                Nome1 = "MG",
-                Nome2 = "mg",
-                Igual = true,
-                Porcentagem = 100
-            };
+            Match matchEsperado = new Match(
+                nome1: "MG",
+                nome2: "mg",
+                igual: true,
+                porcentagem: 100);
 
             Match resultado = comparadorEndereco.CompararEstadoMatch(matchEsperado.Nome1, matchEsperado.Nome2);
 
@@ -759,13 +740,11 @@ namespace Milaneze.ComparadorDeStrings.Test.Enderecos
         {
             IComparadorEndereco comparadorEndereco = getComparadorEndereco();
 
-            Match matchEsperado = new Match()
-            {
-                Nome1 = "MG",
-                Nome2 = "rj",
-                Igual = false,
-                Porcentagem = 0
-            };
+            Match matchEsperado = new Match(
+                nome1: "MG",
+                nome2: "rj",
+                igual: false,
+                porcentagem: 0);
 
             Match resultado = comparadorEndereco.CompararEstadoMatch(matchEsperado.Nome1, matchEsperado.Nome2);
 
@@ -777,21 +756,17 @@ namespace Milaneze.ComparadorDeStrings.Test.Enderecos
         {
             IComparadorEndereco comparadorEndereco = getComparadorEndereco();
 
-            Endereco endereco1 = new Endereco()
-            {
-                Logradouro = "Praça Francisco da Gama",
-                Numero = "8",
-                Cidade = "São Paulo",
-                Estado = "SP"
-            };
+            Endereco endereco1 = new Endereco(
+                logradouro: "Praça Amarildo Pereira",
+                numero: "8",
+                cidade: "São Paulo",
+                estado: "SP");
 
-            Endereco endereco2 = new Endereco()
-            {
-                Logradouro = "Pc Francisco da Gama",
-                Numero = "08",
-                Cidade = "sao paulo",
-                Estado = "sp"
-            };
+            Endereco endereco2 = new Endereco(
+                logradouro: "Pc Amarildo Pereira",
+                numero: "08",
+                cidade: "sao paulo",
+                estado: "sp");
 
             IMatchEndereco matchEndereco = new MatchEndereco();
             
@@ -805,21 +780,17 @@ namespace Milaneze.ComparadorDeStrings.Test.Enderecos
         {
             IComparadorEndereco comparadorEndereco = getComparadorEndereco();
 
-            Endereco endereco1 = new Endereco()
-            {
-                Logradouro = "Praça Francisco da Gama",
-                Numero = "8",
-                Cidade = "São Paulo",
-                Estado = "SP"
-            };
+            Endereco endereco1 = new Endereco(
+                logradouro: "Praça Amarildo Pereira",
+                numero: "8",
+                cidade: "São Paulo",
+                estado: "SP");
 
-            Endereco endereco2 = new Endereco()
-            {
-                Logradouro = "Pc Francisco da Gama",
-                Numero = "12",
-                Cidade = "sao paulo",
-                Estado = "sp"
-            };
+            Endereco endereco2 = new Endereco(
+                logradouro: "Pc Amarildo Pereira",
+                numero: "12",
+                cidade: "sao paulo",
+                estado: "sp");
 
             IMatchEndereco matchEndereco = new MatchEndereco();
             
@@ -833,21 +804,17 @@ namespace Milaneze.ComparadorDeStrings.Test.Enderecos
         {
             IComparadorEndereco comparadorEndereco = getComparadorEndereco();
 
-            Endereco endereco1 = new Endereco()
-            {
-                Logradouro = "Praça Francisco da Gama",
-                Numero = "8",
-                Cidade = "São Paulo",
-                Estado = "SP"
-            };
+            Endereco endereco1 = new Endereco(
+                logradouro: "Praça Amarildo Pereira",
+                numero: "8",
+                cidade: "São Paulo",
+                estado: "SP");
 
-            Endereco endereco2 = new Endereco()
-            {
-                Logradouro = "Avenida Treze de Maio",
-                Numero = "12",
-                Cidade = "sao paulo",
-                Estado = "sp"
-            };
+            Endereco endereco2 = new Endereco(
+                logradouro: "Avenida Treze de Maio",
+                numero: "12",
+                cidade: "sao paulo",
+                estado: "sp");
 
             IMatchEndereco matchEndereco = new MatchEndereco();
 

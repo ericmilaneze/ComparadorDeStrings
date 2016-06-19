@@ -154,46 +154,38 @@ namespace Milaneze.ComparadorDeStrings.Enderecos
 
         public Match CompararLogradouroMatch(string logradouro1, string logradouro2)
         {
-            return new Match()
-            {
-                Nome1 = logradouro1,
-                Nome2 = logradouro2,
-                Porcentagem = CompararLogradouro(logradouro1, logradouro2),
-                Igual = IsLogradouroIgual(logradouro1, logradouro2)
-            };
+            return new Match(
+                nome1: logradouro1,
+                nome2: logradouro2,
+                porcentagem: CompararLogradouro(logradouro1, logradouro2),
+                igual: IsLogradouroIgual(logradouro1, logradouro2));
         }
 
         public Match CompararNumeroMatch(string numero1, string numero2)
         {
-            return new Match()
-            {
-                Nome1 = numero1,
-                Nome2 = numero2,
-                Porcentagem = IsNumeroIgual(numero1, numero2) ? 100 : 0,
-                Igual = IsNumeroIgual(numero1, numero2)
-            };
+            return new Match(
+                nome1: numero1,
+                nome2: numero2,
+                porcentagem: IsNumeroIgual(numero1, numero2) ? 100 : 0,
+                igual: IsNumeroIgual(numero1, numero2));
         }
 
         public Match CompararCidadeMatch(string cidade1, string cidade2)
         {
-            return new Match()
-            {
-                Nome1 = cidade1,
-                Nome2 = cidade2,
-                Porcentagem = CompararCidade(cidade1, cidade2),
-                Igual = IsCidadeIgual(cidade1, cidade2)
-            };
+            return new Match(
+                nome1: cidade1,
+                nome2: cidade2,
+                porcentagem: CompararCidade(cidade1, cidade2),
+                igual: IsCidadeIgual(cidade1, cidade2));
         }
 
         public Match CompararEstadoMatch(string estado1, string estado2)
         {
-            return new Match()
-            {
-                Nome1 = estado1,
-                Nome2 = estado2,
-                Porcentagem = IsEstadoIgual(estado1, estado2) ? 100 : 0,
-                Igual = IsEstadoIgual(estado1, estado2)
-            };
+            return new Match(
+                nome1: estado1,
+                nome2: estado2,
+                porcentagem: IsEstadoIgual(estado1, estado2) ? 100 : 0,
+                igual: IsEstadoIgual(estado1, estado2));
         }
 
         public void Comparar(Endereco endereco1, Endereco endereco2, IMatchEndereco matchEndereco)

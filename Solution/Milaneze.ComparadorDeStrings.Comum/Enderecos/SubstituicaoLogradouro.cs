@@ -7,7 +7,13 @@ namespace Milaneze.ComparadorDeStrings.Comum.Enderecos
 {
     public class SubstituicaoLogradouro
     {
-        public string De { get; set; }
-        public string Para { get; set; }
+        public string De { get; private set; }
+        public string Para { get; private set; }
+
+        public SubstituicaoLogradouro(string de, string para)
+        {
+            De = de;
+            Para = para;
+        }
     }
 }
