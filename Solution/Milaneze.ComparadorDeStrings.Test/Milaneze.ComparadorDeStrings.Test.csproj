@@ -56,13 +56,16 @@
     </When>
     <Otherwise>
       <ItemGroup>
-        <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework" />
+        <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework">
+          <Private>False</Private>
+        </Reference>
       </ItemGroup>
     </Otherwise>
   </Choose>
   <ItemGroup>
     <Compile Include="Enderecos\ComparadorDeStrings_MatchEnderecoTest.cs" />
     <Compile Include="Enderecos\ComparadorDeStrings_ComparadorEndereco.cs" />
+    <Compile Include="Enderecos\ComparadorDeStrings_Comum_Endereco.cs" />
     <Compile Include="SimilarityToolTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

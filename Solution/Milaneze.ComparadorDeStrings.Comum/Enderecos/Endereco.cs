@@ -19,5 +19,10 @@ namespace Milaneze.ComparadorDeStrings.Comum.Enderecos
             Cidade = cidade;
             Estado = estado;
         }
+
+        public IMatchEndereco Comparar(Endereco endereco2, IComparadorEndereco comparadorEndereco)
+        {
+            return comparadorEndereco.Comparar(this, endereco2);
+        }
     }
 }

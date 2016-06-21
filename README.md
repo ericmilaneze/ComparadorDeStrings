@@ -22,19 +22,56 @@ Console.WriteLine("% Match: {0}", porcentagemMatch); // % Match: 93,61 >> pela f
 
 ## Exemplo 2
 ```
+Endereco endereco1 = new Endereco(
+	cidade: "São Paulo",
+	estado: "SP",
+	logradouro: "Avenida 23 de Maio",
+	numero: "110");
+
+Endereco endereco2 = new Endereco(
+	cidade: "Sao Paulo", // sem ~ (til)
+	estado: "SP",
+	logradouro: "Avenida Vinte e Três de Maio", // número por extenso
+	numero: "110");
+
+
 IComparadorEndereco comparador = new ComparadorEndereco(
-   porcentagemMinimaMatchLogradouro: 90,
-   porcentagemMinimaMatchCidade: 90,
-   substituicoesLogradouro: new List<SubstituicaoLogradouro>()
-   {
-	   new SubstituicaoLogradouro(
-		   de: "Avenida",
-		   para: "Av"),
-	   new SubstituicaoLogradouro(
-		   de: "Av.",
-		   para: "Av")
-   }
-);
+	porcentagemMinimaMatchLogradouro: 90,
+	porcentagemMinimaMatchCidade: 90,
+	substituicoesLogradouro: new List<SubstituicaoLogradouro>()
+	{
+		new SubstituicaoLogradouro(
+			de: "Avenida",
+			para: "Av"),
+		new SubstituicaoLogradouro(
+			de: "Av.",
+			para: "Av")
+	});
+
+IMatchEndereco matchEndereco = comparador.Comparar(endereco1, endereco2);
+
+
+Console.WriteLine(
+	matchEndereco.MatchTotal
+	? "Endereços iguais." // esse será o resultado mostrado
+	: "Endereços diferentes.");
+```
+
+## Exemplo 2
+```
+IComparadorEndereco comparador = new ComparadorEndereco(
+	porcentagemMinimaMatchLogradouro: 90,
+	porcentagemMinimaMatchCidade: 90,
+	substituicoesLogradouro: new List<SubstituicaoLogradouro>()
+	{
+		new SubstituicaoLogradouro(
+			de: "Avenida",
+			para: "Av"),
+		new SubstituicaoLogradouro(
+			de: "Av.",
+			para: "Av")
+	});
+
 
 Endereco endereco1 = new Endereco(
 	cidade: "São Paulo",
@@ -48,12 +85,14 @@ Endereco endereco2 = new Endereco(
 	logradouro: "Avenida Vinte e Três de Maio", // número por extenso
 	numero: "110");
 
-IMatchEndereco matchEndereco = new MatchEndereco();
 
-comparador.Comparar(endereco1, endereco2, matchEndereco);
+IMatchEndereco matchEndereco = endereco1.Comparar(endereco2, comparador);
+
 
 Console.WriteLine(
 	matchEndereco.MatchTotal
 	? "Endereços iguais." // esse será o resultado mostrado
 	: "Endereços diferentes.");
 ```
+
+https://raw.githubusercontent.com/ericmilaneze/Milaneze.ComparadorDeStrings/master/Solution/ClassDiagram.png

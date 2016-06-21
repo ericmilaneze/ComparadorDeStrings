@@ -34,6 +34,7 @@ namespace Milaneze.ComparadorDeStrings.Test.Enderecos
                     de: "engenheiro",
                     para: "eng")
             };
+
             return comparadorEndereco;
         }
 
@@ -824,6 +825,50 @@ namespace Milaneze.ComparadorDeStrings.Test.Enderecos
         }
 
         [TestMethod]
+        public void ComparadorDeStrings_Comparar_NaoOk_RetornoMatch()
+        {
+            IComparadorEndereco comparadorEndereco = getComparadorEndereco();
+
+            Endereco endereco1 = new Endereco(
+                logradouro: "Praça Amarildo Pereira",
+                numero: "8",
+                cidade: "São Paulo",
+                estado: "SP");
+
+            Endereco endereco2 = new Endereco(
+                logradouro: "Avenida Treze de Maio",
+                numero: "12",
+                cidade: "sao paulo",
+                estado: "sp");
+
+            IMatchEndereco matchEndereco = comparadorEndereco.Comparar(endereco1, endereco2);
+
+            Assert.IsTrue(!matchEndereco.MatchParcial && !matchEndereco.MatchTotal);
+        }
+
+        [TestMethod]
+        public void ComparadorDeStrings_Comparar_Ok_RetornoMatch()
+        {
+            IComparadorEndereco comparadorEndereco = getComparadorEndereco();
+
+            Endereco endereco1 = new Endereco(
+                logradouro: "Praça Amarildo Pereira",
+                numero: "8",
+                cidade: "São Paulo",
+                estado: "SP");
+
+            Endereco endereco2 = new Endereco(
+                logradouro: "Pc Amarildo Pereira",
+                numero: "08",
+                cidade: "sao paulo",
+                estado: "sp");
+
+            IMatchEndereco matchEndereco = comparadorEndereco.Comparar(endereco1, endereco2);
+
+            Assert.IsTrue(matchEndereco.MatchParcial && matchEndereco.MatchTotal);
+        }
+
+        [TestMethod]
         public void ComparadorDeStrings_ComparadorEndereco_CompararLogradouro_Avulso001()
         {
             IComparadorEndereco comparadorEndereco = getComparadorEndereco();
@@ -836,7 +881,5 @@ namespace Milaneze.ComparadorDeStrings.Test.Enderecos
 
             Assert.AreEqual<double>(esperado, resultado);
         }
-
-        
     }
 }

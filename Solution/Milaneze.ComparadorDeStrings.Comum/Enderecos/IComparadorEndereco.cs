@@ -30,6 +30,13 @@ namespace Milaneze.ComparadorDeStrings.Comum.Enderecos
         void Comparar(Endereco endereco1, Endereco endereco2, IMatchEndereco matchEndereco);
 
         /// <summary>
+        /// Compara dois endereços.
+        /// </summary>
+        /// <param name="endereco1">Endereço 1.</param>
+        /// <param name="endereco2">Endereço 2.</param>
+        IMatchEndereco Comparar(Endereco endereco1, Endereco endereco2);
+
+        /// <summary>
         /// Compara dois nomes de cidades.
         /// </summary>
         /// <param name="cidade1">Cidade 1.</param>

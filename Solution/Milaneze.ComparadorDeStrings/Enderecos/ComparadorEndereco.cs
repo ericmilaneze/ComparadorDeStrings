@@ -195,5 +195,14 @@ namespace Milaneze.ComparadorDeStrings.Enderecos
             matchEndereco.Cidade = CompararCidadeMatch(endereco1.Cidade, endereco2.Cidade);
             matchEndereco.Estado = CompararEstadoMatch(endereco1.Estado, endereco2.Estado);
         }
+
+        public IMatchEndereco Comparar(Endereco endereco1, Endereco endereco2)
+        {
+            IMatchEndereco matchEndereco = new MatchEndereco();
+
+            Comparar(endereco1, endereco2, matchEndereco);
+
+            return matchEndereco;
+        }
     }
 }
