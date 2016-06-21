@@ -95,4 +95,5 @@ Console.WriteLine(
 	: "Endereços diferentes.");
 ```
 
+## Diagrama de Classes
 ![alt tag](https://raw.githubusercontent.com/ericmilaneze/Milaneze.ComparadorDeStrings/master/Solution/ClassDiagram.png)
