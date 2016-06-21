@@ -57,7 +57,7 @@ Console.WriteLine(
 	: "Endereços diferentes.");
 ```
 
-## Exemplo 2
+## Exemplo 3
 ```
 IComparadorEndereco comparador = new ComparadorEndereco(
 	porcentagemMinimaMatchLogradouro: 90,
@@ -95,4 +95,4 @@ Console.WriteLine(
 	: "Endereços diferentes.");
 ```
 
-https://raw.githubusercontent.com/ericmilaneze/Milaneze.ComparadorDeStrings/master/Solution/ClassDiagram.png
+![alt tag](https://raw.githubusercontent.com/ericmilaneze/Milaneze.ComparadorDeStrings/master/Solution/ClassDiagram.png)
